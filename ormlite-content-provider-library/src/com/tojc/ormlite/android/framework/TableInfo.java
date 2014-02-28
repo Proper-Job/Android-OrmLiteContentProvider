@@ -84,10 +84,12 @@ public class TableInfo implements Validity {
 
                 // check id
                 if (columnInfo.getColumnName().equals(BaseColumns._ID)) {
-                    boolean generatedId = classfield.getAnnotation(DatabaseField.class).generatedId();
-                    if (generatedId) {
-                        this.idColumnInfo = columnInfo;
-                    }
+                	// remove check for generatedId for ReadOnlyContentProvider                	
+                    //boolean generatedId = classfield.getAnnotation(DatabaseField.class).generatedId();
+                    //if (generatedId) {
+                    //    this.idColumnInfo = columnInfo;
+                    //}
+                	this.idColumnInfo = columnInfo;
                 }
 
                 // DefaultSortOrder
